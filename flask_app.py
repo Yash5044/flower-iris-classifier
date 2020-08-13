@@ -25,8 +25,8 @@ def return_prediction(model,scaler,sample_json):
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'mysecretkey'
 
-flower_model = load_model("../model/iris.h5")
-flower_scaler = joblib.load("../scaler/iris_scaler.pkl")
+flower_model = load_model("./model/iris.h5")
+flower_scaler = joblib.load("./scaler/iris_scaler.pkl")
 
 class FlowerForm(FlaskForm):
     sep_len = TextField('Sepal Length')
@@ -65,7 +65,3 @@ def prediction():
     results = return_prediction(model=flower_model,scaler=flower_scaler,sample_json=content)
 
     return render_template('prediction.html',results=results)
-
-
-if __name__ == '__main__':
-    app.run()
