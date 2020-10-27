@@ -9,12 +9,36 @@
 	</head>
 <body>
 <h1>Thank You. Here is the Information You Gave:</h1>
-<ul>
-	<li>Sepal Length: {{session['sep_len']}}</li>
-	<li>Sepal Width:  {{session['sep_wid']}}</li>
-	<li>Petal Length: {{session['pet_len']}}</li>
-	<li>Petal Width:  {{session['pet_wid']}}</li>
-</ul>
+
+<div class="container">
+	<div class="table-responsive">
+	<table class="table table-bordered   table-striped" style="margin-top:100px">
+	  <tbody>
+		<tr class="winner__table">
+		  <td class="table__head">Sepal Length</td>
+		  <td>{{session['sep_len']}}</td>
+		</tr>
+
+		<tr class="winner__table">
+			<td class="table__head">Sepal Width</td>
+			<td>{{session['sep_wid']}}</td>
+		</tr>
+
+	    <tr class="winner__table">
+			<td class="table__head">Petal Length</td>
+			<td>{{session['pet_len']}}</td>
+		</tr>
+
+	    <tr class="winner__table">
+			<td class="table__head">Petal Width</td>
+			<td>{{session['pet_wid']}}</td>
+		</tr>
+ 
+	  </tbody>
+	</table>
+	</div>
+  </div>
+  
 <h2>Your Predicted Flower Class is: {{results}}</h2>
 </body>
 </html>
